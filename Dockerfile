@@ -15,4 +15,5 @@ RUN apk add --no-cache \
 USER jenkins
 
 RUN git config --global credential.helper '!aws codecommit credential-helper $@' \
- && git config --global credential.UseHttpPath true
+ && git config --global credential.UseHttpPath true \
+ && mv ~/.gitconfig /usr/share/jenkins/ref
