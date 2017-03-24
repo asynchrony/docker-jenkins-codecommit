@@ -2,13 +2,13 @@ FROM jenkins:alpine
 
 USER root
 
-RUN apk add --no-cache \
+RUN addgroup -g 233 docker \
+ && apk add --no-cache \
       docker \
       py2-pip \
       python \
  && pip install --no-cache-dir \
       awscli \
- && addgroup -g 233 docker \
  && docker --version \
  && git --version \
  && aws --version
