@@ -8,6 +8,7 @@ RUN apk add --no-cache \
       python \
  && pip install --no-cache-dir \
       awscli \
+ && addgroup -g 233 docker \
  && docker --version \
  && git --version \
  && aws --version
