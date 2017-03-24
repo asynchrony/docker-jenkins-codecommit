@@ -7,8 +7,10 @@ RUN addgroup -g 233 docker \
       docker \
       py2-pip \
       python \
+      shadow \
  && pip install --no-cache-dir \
       awscli \
+ && usermod -a -G docker jenkins \
  && docker --version \
  && git --version \
  && aws --version
